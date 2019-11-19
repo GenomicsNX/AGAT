@@ -8,5 +8,5 @@ os:
   - osx
 
 before_install:
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; sudo apt-get -y install libdb-dev; sudo apt-get -y install r-base; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -y install libdb-dev; sudo apt-get -y install r-base; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; brew install berkeley-db; fi
