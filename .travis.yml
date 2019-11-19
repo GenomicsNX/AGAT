@@ -8,7 +8,7 @@ before_install:
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then 
       \curl -L https://install.perlbrew.pl | bash;
       source ~/perl5/perlbrew/etc/bashrc;
-      perlbrew install https://www.cpan.org/src/5.0/perl-${TRAVIS_PERL_VERSION}.0.tar.gz;
+      travis_wait 30 perlbrew install https://www.cpan.org/src/5.0/perl-${TRAVIS_PERL_VERSION}.0.tar.gz;
       perlbrew install-cpanm;
       brew update;
       brew install berkeley-db;
