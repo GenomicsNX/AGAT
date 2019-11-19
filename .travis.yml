@@ -3,7 +3,10 @@ perl:
   - "5.30"
   - "5.28"
   - "5.26"
+os:
+  - linux
+  - osx
 
 before_install:
-  - sudo apt-get -y install libdb-dev
-  - sudo apt-get -y install r-base
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; sudo apt-get -y install libdb-dev; sudo apt-get -y install r-base; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; brew install berkeley-db; fi
