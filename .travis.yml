@@ -9,6 +9,7 @@ before_install:
       \curl -L https://install.perlbrew.pl | bash;
       source ~/perl5/perlbrew/etc/bashrc;
       travis_wait 30 perlbrew install https://www.cpan.org/src/5.0/perl-${TRAVIS_PERL_VERSION}.0.tar.gz;
+      perlbrew use /perl-${TRAVIS_PERL_VERSION}.0
       perlbrew install-cpanm;
       brew update;
       brew install berkeley-db;
